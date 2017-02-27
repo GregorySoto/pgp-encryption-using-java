@@ -3,8 +3,9 @@
 This project is intended to serve as a sample application that shows how to implement PGP encryption and decryption using Java.
 
 ## Features
-*Encryption, compression, and signing
-*Decryption and signature verification
+
+* Encryption, compression, and signing
+* Decryption and signature verification
 
 ## Installation
 On Windows: Gpg4win is required with the GNUPGHOME environment variable set to the location of where the PGP key rings can be found. Download Gpg4win from here (https://www.gpg4win.org/).
