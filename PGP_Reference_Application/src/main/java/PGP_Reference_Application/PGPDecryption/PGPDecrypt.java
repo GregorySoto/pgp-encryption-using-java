@@ -129,11 +129,10 @@ public class PGPDecrypt {
 
                     //USE THE BELOW TO CHECK FOR A FAILING SIGNATURE VERIFICATION
                     //THE CERTIFICATE MATCHING THE KEY ID MUST BE IN THE PUBLIC KEY RING.
+                    //long fakeKeyId = 3008998260528343108L;
+                    //PGPPublicKey publicKey = pgpPub.getPublicKey(fakeKeyId);
 
-                    long fakeKeyId = 3008998260528343108L;
-                    PGPPublicKey publicKey = pgpPub.getPublicKey(fakeKeyId);
-
-                    //PGPPublicKey publicKey = pgpPub.getPublicKey(onePassSignature.getKeyID());
+                    PGPPublicKey publicKey = pgpPub.getPublicKey(onePassSignature.getKeyID());
 
                     onePassSignature.init(new JcaPGPContentVerifierBuilderProvider().setProvider("BC"), publicKey);
 

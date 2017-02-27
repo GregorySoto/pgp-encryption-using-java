@@ -79,9 +79,7 @@ public class PgpEncrypt {
 
             OutputStream encryptedOut = encryptedDataGenerator.open(outputStream, new byte[1 << 16]);
 
-            //COMPRESSED GENERATOR OBJECTS
-            /*PGPCompressedDataGenerator compressedDataGenerator = new PGPCompressedDataGenerator(
-                    PGPCompressedData.ZIP);*/
+            //COMPRESSED GENERATOR OBJECTS            
             PGPCompressedDataGenerator compressedDataGenerator = new PGPCompressedDataGenerator(
                     compressionAlgorithm);
 

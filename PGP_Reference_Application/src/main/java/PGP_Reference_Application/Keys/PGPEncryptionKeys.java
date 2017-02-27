@@ -41,6 +41,12 @@ public class PGPEncryptionKeys {
         this.privateKey = privateKey;
     }
 
+	/**
+	*
+	*
+	*
+	*
+	*/
     public PGPEncryptionKeys(String publicKeyPath, String publicKeyUserId, String secretKeyPath,
                              String secretKeyUserId, String passPhrase)
             throws IOException, PGPException

@@ -4,7 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.file.NoSuchFileException;
 import java.security.NoSuchProviderException;
 import java.security.Security;
 
@@ -34,7 +33,7 @@ public class Program {
 
     private static String originalInputFile = "PlainText.txt";
 
-    private static String encryptedFile = "JavaEncryptedData1.txt";
+    private static String encryptedFile = "JavaEncryptedData.txt";
 
     private static String outputFile = "JavaOriginal.txt";
 
@@ -59,14 +58,14 @@ public class Program {
         Security.addProvider(new BouncyCastleProvider());
 
         Program objPgp = new Program();
-        /*if ((Debugger.IsAttached != true)) {
-            _keyRingHome = Environment.GetEnvironmentVariable("GNUPGHOME");
-        }*/
+        
+        _keyRingHome = Environment.GetEnvironmentVariable("GNUPGHOME");
+        
 
         try{
 
             objPgp.encryption();
-            //objPgp.decryption();
+            objPgp.decryption();
         }
         catch(Exception ex){
             System.out.println("Something went wrong");
@@ -78,11 +77,9 @@ public class Program {
     }
 
     public final void encryption() {
-        System.out.println("Encrypting");
+        System.out.println("Encrypting to " + filePath + "\\" + encryptedFile);
 
-        try{
-            System.out.println(filePath + "\\" + encryptedFile);
-
+        try{        
             PGPEncryptionKeys encryptionKeys = new PGPEncryptionKeys(
                     _keyRingHome + "\\" + publicKeyRingFilename, publicKeyEncryptionUserId, _keyRingHome + "\\" +
                     secretKeyRingFilename, signatureKeyUserId, secretKeyRingPassphrase);
@@ -107,7 +104,7 @@ public class Program {
     }
 
     public final void decryption() {
-        System.out.println("Decrypting");
+        System.out.println("Decrypting to " + filePath + "\\" + outputFile);
 
         try {
             PGPDecrypt.Decrypt(filePath + "\\" + encryptedFile, _keyRingHome + "\\" + secretKeyRingFilename, secretKeyRingPassphrase, filePath + "\\" + outputFile, _keyRingHome + "\\" + publicKeyRingFilename);
