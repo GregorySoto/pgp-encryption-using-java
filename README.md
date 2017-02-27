@@ -12,7 +12,7 @@ On Windows: Gpg4win is required with the GNUPGHOME environment variable set to t
 On Ubuntu: sudo apt-get install gpa gnupg2
 See a basic guide [here](https://www.deepdotweb.com/2015/02/17/basic-guide-pgp-linux).
 
-On Mac: GPG Tools is required. Download from [here](https://gpgptools.org)
+On Mac: GPG Tools is required. Download from [here](https://gpgptools.org).
 
 ## System Requirements
 
