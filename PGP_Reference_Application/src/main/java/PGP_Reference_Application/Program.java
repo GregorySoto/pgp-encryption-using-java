@@ -41,7 +41,7 @@ public class Program {
     // Used for signing
     private static int sigHashAlgorithm = PGPUtil.SHA1;
 
-    private static String signatureKeyUserId = "Gregory Soto1 <sotogregory@gmail.com>";
+    private static String signatureKeyUserId = "Gregory Soto <gregorysoto@github.com>";
 
     private static boolean withIntegrityCheck = true;
 
@@ -53,7 +53,7 @@ public class Program {
     // Used for encryption
     private static int symmetricAlgorithm = PGPEncryptedData.AES_128;
 
-    private static String publicKeyEncryptionUserId = "Gregory Soto1 <sotogregory@gmail.com>";
+    private static String publicKeyEncryptionUserId = "Gregory Soto <gregorysoto@github.com>";
 
     public static void main(String[] args) {
         Security.addProvider(new BouncyCastleProvider());
